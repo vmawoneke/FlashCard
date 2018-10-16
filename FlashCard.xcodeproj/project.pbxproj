@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		177526B52172EDFA00213476 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177526B42172EDFA00213476 /* AppDelegate.swift */; };
-		177526B72172EDFA00213476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177526B62172EDFA00213476 /* ViewController.swift */; };
 		177526BA2172EDFA00213476 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177526B82172EDFA00213476 /* Main.storyboard */; };
 		177526BC2172EDFA00213476 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177526BB2172EDFA00213476 /* Assets.xcassets */; };
 		177526BF2172EDFA00213476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177526BD2172EDFA00213476 /* LaunchScreen.storyboard */; };
 		177526CA2172EDFA00213476 /* FlashCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177526C92172EDFA00213476 /* FlashCardTests.swift */; };
 		177526D52172EDFA00213476 /* FlashCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177526D42172EDFA00213476 /* FlashCardUITests.swift */; };
+		177526E22172EF8100213476 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177526B62172EDFA00213476 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177526B72172EDFA00213476 /* ViewController.swift in Sources */,
+				177526E22172EF8100213476 /* ViewController.swift in Sources */,
 				177526B52172EDFA00213476 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
