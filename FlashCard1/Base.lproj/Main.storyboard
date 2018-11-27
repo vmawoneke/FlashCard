@@ -78,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaQ-c9-GSw">
-                                <rect key="frame" x="291" y="578" width="30" height="30"/>
+                                <rect key="frame" x="184" y="575" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.34896385740000002" green="0.19102525980000001" blue="0.96332577720000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="+">
@@ -100,6 +100,28 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapOption2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtX-rS-LpW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-bY-Frp">
+                                <rect key="frame" x="35" y="573" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68338867270000003" green="0.68151366120000001" blue="0.75619332900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Prev">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Zv-k0-Lnh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEa-aD-GN0">
+                                <rect key="frame" x="292" y="570" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68338867270000003" green="0.68151366120000001" blue="0.75619332900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AKU-8N-vjI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -126,6 +148,8 @@
                         <outlet property="btnOption1" destination="wH6-WG-AC6" id="D4n-F8-g3v"/>
                         <outlet property="btnOption2" destination="OKL-yH-1Eb" id="cTf-zi-uRJ"/>
                         <outlet property="btnOption3" destination="Pf1-Vn-bat" id="oeM-2y-qXr"/>
+                        <outlet property="nextButton" destination="GEa-aD-GN0" id="xye-bm-I5S"/>
+                        <outlet property="prevButton" destination="Feh-bY-Frp" id="PHW-Y8-tKN"/>
                         <outlet property="questionLabel" destination="E3p-gd-try" id="OuQ-MY-YI8"/>
                     </connections>
                 </viewController>
