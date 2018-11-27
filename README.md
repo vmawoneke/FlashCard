@@ -6,7 +6,7 @@
 \
 ### App Walk-though\
 
-<img src="http://recordit.co/pjK5mZHSKZ" width=200><br>\
+<img src="https://i.imgur.com/gmWNkvf.gifv" width=200><br>\
 \
 
 ## Required\
