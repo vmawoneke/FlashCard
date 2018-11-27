@@ -1,15 +1,15 @@
 //
-//  FlashCardTests.swift
-//  FlashCardTests
+//  FlashCard1Tests.swift
+//  FlashCard1Tests
 //
-//  Created by Vimbai Mawoneke on 10/13/18.
+//  Created by Vimbai Mawoneke on 11/25/18.
 //  Copyright © 2018 Vimbai Mawoneke. All rights reserved.
 //
 
 import XCTest
-@testable import FlashCard
+@testable import FlashCard1
 
-class FlashCardTests: XCTestCase {
+class FlashCard1Tests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

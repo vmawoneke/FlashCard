@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  FlashCard
+//  FlashCard1
 //
-//  Created by Vimbai Mawoneke on 10/13/18.
+//  Created by Vimbai Mawoneke on 11/25/18.
 //  Copyright © 2018 Vimbai Mawoneke. All rights reserved.
 //
 
