@@ -1,15 +1,4 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fnil\fcharset0 AppleColorEmoji;\f1\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
-\margl1440\margr1440\vieww28600\viewh15460\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
 
-\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
-\uc0\u55357 \u56541 
-\f1  `NOTE` Paste this template at the top of your existing `README.md` file from the last lab.\
-\
 ## Lab 2\
 \
 ### App Description\
