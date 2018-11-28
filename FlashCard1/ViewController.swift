@@ -208,7 +208,7 @@ class ViewController: UIViewController {
         
         //update labels
         questionLabel.text = currentFlashcard.question
-        answerLabel.text = currentFlashcard.question
+        answerLabel.text = currentFlashcard.answer
     }
     
     func saveAllFlashcardsToDisk(){
