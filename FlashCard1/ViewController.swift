@@ -32,6 +32,13 @@ class ViewController: UIViewController {
     //Current flashcard index
     var currentIndex = 0
     
+    //Variable to identify when we tap on prevButton
+    //Set it to false because when app starts there is no prev to tap on
+    var prevTapBool: Bool = false
+    
+    //x Variable for translation
+    var xTranslation = 300.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -51,6 +58,8 @@ class ViewController: UIViewController {
         
         answerLabel.isHidden = true
         questionLabel.isHidden = false
+        
+        //Styling the card
         Card.layer.cornerRadius = 20.0
         Card.clipsToBounds = true
         Card.layer.shadowRadius = 5.0
@@ -60,6 +69,7 @@ class ViewController: UIViewController {
         Card.layer.shadowOpacity = 0.0
         questionLabel.clipsToBounds = true
        
+        //Styling the multiple choice answers
        // btnOption1.layer.borderWidth = 5.0
        // btnOption1.layer.borderColor = #colorLiteral(red: 0.3741965294, green: 0.1810016334, blue: 1, alpha: 0.6)
         btnOption1.layer.cornerRadius = 15.0
@@ -84,17 +94,17 @@ class ViewController: UIViewController {
         creationController.flashcardsController = self
     }
 
-    @IBAction func didTapOnFlashCard(_ sender: UITapGestureRecognizer) {
-        
-       
-        if(answerLabel.isHidden == true){
-            questionLabel.isHidden = true
-            answerLabel.isHidden = false
-        }
-        else if(answerLabel.isHidden == false) {
-            answerLabel.isHidden = true
-            questionLabel.isHidden = false
-        }
+   @IBAction func didTapOnFlashCard(_ sender: UITapGestureRecognizer) {
+
+    flipFlashcard()
+//        if(answerLabel.isHidden == true){
+//            questionLabel.isHidden = true
+//            answerLabel.isHidden = false
+//        }
+//        else if(answerLabel.isHidden == false) {
+//            answerLabel.isHidden = true
+//            questionLabel.isHidden = false
+//        }
     }
     
     @IBAction func didTapOption1(_ sender: UIButton) {
@@ -130,6 +140,9 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnPrev(_ sender: Any) {
         
+        //Confirming that didTapOnPrev was tapped
+         prevTapBool = true
+        
         //decrease current index
         currentIndex = currentIndex - 1
         
@@ -138,6 +151,9 @@ class ViewController: UIViewController {
         
         //update buttons
         updateNextPrevButtons()
+        //animateCardIn()
+        animateCardOut()
+        
         
     }
     
@@ -148,10 +164,11 @@ class ViewController: UIViewController {
         currentIndex = currentIndex + 1
         
         //Update labels
-        updateLabels()
+        //updateLabels()
         
         //update buttons
         updateNextPrevButtons()
+        animateCardOut()
     }
     
     func updateFlashCard(question:String?,answer:String? ){
@@ -241,6 +258,64 @@ class ViewController: UIViewController {
         flashcards.append(contentsOf: savedCards)
     }
 }
+    func flipFlashcard(){
+        
+        UIView.transition(with: Card, duration: 0.3, options:UIView.AnimationOptions .transitionFlipFromRight  , animations: {
+            if(self.answerLabel.isHidden == true){
+                self.questionLabel.isHidden = true
+                self.answerLabel.isHidden = false
+            }
+            else if(self.answerLabel.isHidden == false) {
+                self.answerLabel.isHidden = true
+                self.questionLabel.isHidden = false
+            }
+        })
+    }
+    
+    func animateCardOut(){
+        
+        //Check to see if we are going to the prev card and do its animation
+        if prevTapBool == true {
+            xTranslation = -xTranslation
+        }
+        else{
+            xTranslation = 300.0
+        }
+        
+        UIView.animate(withDuration: 0.3, animations:{
+            self.Card.transform = CGAffineTransform.identity.translatedBy(x: CGFloat(self.xTranslation), y: 0.0)
+        }, completion: { finished in
+            
+            //Update labels
+            self.updateLabels()
+            //Run other animation
+            self.animateCardIn()
+        })
+        
+    
+    }
 
-}
+    func animateCardIn(){
+        
+        //Check to see if we are going to the prev card and do its animation
+        if prevTapBool == true {
+            xTranslation = -xTranslation
+        }
+        else{
+            xTranslation = 300.0
+        }
+        
+        
+
+        //Start on the right side(don't animate this)
+        Card.transform = CGAffineTransform.identity.translatedBy(x: CGFloat(self.xTranslation), y: 0.0)
+        
+        //Animate card going back to its origional position
+        UIView.animate(withDuration: 0.3){
+            self.Card.transform = CGAffineTransform.identity
+            }
+        }
+        
+    }
+
 
