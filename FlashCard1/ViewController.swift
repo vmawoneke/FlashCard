@@ -143,15 +143,15 @@ class ViewController: UIViewController {
         //Confirming that didTapOnPrev was tapped
          prevTapBool = true
         
+        
         //decrease current index
         currentIndex = currentIndex - 1
         
         //Update labels
-        updateLabels()
+        //updateLabels()
         
         //update buttons
         updateNextPrevButtons()
-        //animateCardIn()
         animateCardOut()
         
         
@@ -160,8 +160,12 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnNext(_ sender: Any) {
         
+        //confirming that didTapOnPrev was not tapped
+        prevTapBool = false
+        
         //Increase current index
         currentIndex = currentIndex + 1
+        
         
         //Update labels
         //updateLabels()
@@ -272,18 +276,13 @@ class ViewController: UIViewController {
         })
     }
     
+    
     func animateCardOut(){
         
-        //Check to see if we are going to the prev card and do its animation
-        if prevTapBool == true {
-            xTranslation = -xTranslation
-        }
-        else{
-            xTranslation = 300.0
-        }
+    confirmAnimationDirection()
         
         UIView.animate(withDuration: 0.3, animations:{
-            self.Card.transform = CGAffineTransform.identity.translatedBy(x: CGFloat(self.xTranslation), y: 0.0)
+            self.Card.transform = CGAffineTransform.identity.translatedBy(x:-CGFloat(self.xTranslation), y: 0.0)
         }, completion: { finished in
             
             //Update labels
@@ -297,24 +296,28 @@ class ViewController: UIViewController {
 
     func animateCardIn(){
         
-        //Check to see if we are going to the prev card and do its animation
-        if prevTapBool == true {
-            xTranslation = -xTranslation
-        }
-        else{
-            xTranslation = 300.0
-        }
+       confirmAnimationDirection()
         
-        
-
         //Start on the right side(don't animate this)
         Card.transform = CGAffineTransform.identity.translatedBy(x: CGFloat(self.xTranslation), y: 0.0)
         
         //Animate card going back to its origional position
         UIView.animate(withDuration: 0.3){
             self.Card.transform = CGAffineTransform.identity
+            
+            
             }
         }
+    
+    func confirmAnimationDirection(){
+        
+        if prevTapBool  == true{
+            xTranslation = -1 * xTranslation
+        }
+        else{
+            xTranslation = 300.0
+        }
+    }
         
     }
 
